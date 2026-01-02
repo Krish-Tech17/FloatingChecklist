@@ -1,0 +1,222 @@
+{
+  "title": "Preflight Checklist",
+  "showCloseButton": true,
+  "checklist": [
+    {
+      "id": "C1",
+      "label": "Obtain work permit and observe all safety precautions.",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C2",
+      "label": "Coordinate with Field Instrument supervisor if required.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C3",
+      "label": "Identify isolations. Ensure work area is clean / roped off and external scaffolding is adequate.",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C4",
+      "label": "Ensure to have in hand, special tools / PPEs required to carry out Maintenance activities.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C5",
+      "label": "Make sure that all ESD valves are closed and tagged properly.",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C6",
+      "label": "Ensure that disposals of hazardous wastes to be per Hazardous waste procedure.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C7",
+      "label": "Aware of Pyrophoric iron fires and suitable arrangements to make.",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C8",
+      "label": "Deposits / Scales must be removed from the pig launcher / receiver in compliance with ADNOC offshore safety regulations.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C9",
+      "label": "Make sure to comply with all PTW conditions.",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C10",
+      "label": "Read & Refer to the pig launchers / receivers & QOC IOM Manuals for more details of carrying out this work. ",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C11",
+      "label": "Isolate/de-pressurise/drain/purge/vent/spade pig launcher / receiver and lines.",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C12",
+      "label": "Remove associated pipe work/valves. Replace or refurbish. Clean/copper slip/ grease nuts and bolts during launcher / receiver inspection.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C13",
+      "label": "Check / lubricate band lock quick opening closure hinges.",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C14",
+      "label": "Open pig launcher / Receiver band lock quick opening closure hinged door. Clean / copperslip /grease door nuts and bolts upon inspection replace or refurbish.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C15",
+      "label": "Check quick opening device for any deformation and abnormalities.",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C16",
+      "label": "Check closure release device.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C17",
+      "label": "Check and record if any abnormalities on  fixed and sliding support",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C18",
+      "label": "Clean hinged door and launcher / receiver exterior.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C19",
+      "label": "Clean the launcher / receiver internally for carrying out inspection.",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C20",
+      "label": "Coordinate with Inspection engineer to examine the pig launcher / receiver.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C21",
+      "label": "Coordinate with control engineer to check all associated instruments and control systems / components. ",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C22",
+      "label": "Coordinate with Electrical engineer to check earthing and earthing lug.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C23",
+      "label": "Check the condition of pig.",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C24",
+      "label": "Check and lubricate all the isolation valves.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C25",
+      "label": "Visually check and record all nozzles gasket seating surfaces.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C26",
+      "label": "Check Pig indicators, stops and launch bars.",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C27",
+      "label": "Visually check the concrete foundation and foundation bolts tightness.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C28",
+      "label": "Carry out corrective work as per inspection work order repair report.",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C29",
+      "label": "Reinstate the instruments that have been removed for maintenance.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C30",
+      "label": "Reinstate pig launcher / Receiver, quick opening end closure hinged door. Use new gaskets, new or refurbished nuts and bolts",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C31",
+      "label": "Reinstate associated pipe work/valves. Use new gaskets, new or refurbished nuts and bolts.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C32",
+      "label": "Ensure remedial paintwork is completed and Tag No. is re-stencilled.",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C33",
+      "label": "De-spade pig launcher / receiver and lines; ensure that new gaskets new or refurbished nuts and bolts have been used.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C34",
+      "label": "Release the launcher / receiver for commissioning.",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C35",
+      "label": "Enter all the significant observations and findings are recorded in the equipment history.",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C36",
+      "label": "Clean and tidy work area, sign off work permit and hand over the equipment for operations.",
+      "required": true,
+      "alreadychecked": false
+    }
+  ]
+}

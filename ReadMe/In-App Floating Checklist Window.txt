@@ -1,0 +1,167 @@
+# In-App Floating Checklist Window – README
+
+## Overview
+
+The **In-App Floating Checklist Window** is a reusable Unity UI module designed to display **scenario-specific maintenance or operational checklists** inside the application as a **floating, state-preserving panel**.
+
+The window supports **minimized and maximized states**, dynamic checklist population from **JSON**, validation of required items, and seamless integration with application workflows.
+
+---
+
+## Key Features
+
+* Floating checklist window that appears **only when a scenario requires a checklist**
+* Supports **minimized and maximized** panel states
+* Preserves checklist state during minimize/maximize
+* Dynamically populated from **JSON data**
+* Validation of **required checklist items**
+* Integrated with reusable **Popup system**
+* Designed for **maintenance, inspection, and procedural workflows**
+Checklist validation is performed **before proceeding to the next step**.
+* If required items are not checked:
+
+  * A **popup message is displayed**
+  * Navigation to the next step is blocked
+* User can proceed only after **all required checklist items are completed**.
+
+---
+
+## Floating Window States
+
+### Minimized State
+
+* Appears as a compact floating UI
+* Displays checklist title or indicator
+* Allows quick access to maximize the checklist
+
+### Maximized State
+
+* Displays full checklist content
+* Scrollable checklist items
+* Submit and Close actions available
+
+---
+
+## Checklist Data Structure
+
+Checklist items are driven by JSON and mapped to the following structure:
+
+```csharp
+[System.Serializable]
+public class ChecklistData
+{
+    public string id;
+    public string label;
+    public bool required;
+    public bool alreadychecked;
+}
+```
+
+### Field Description
+
+| Field            | Description                               |
+| ---------------- | ----------------------------------------- |
+| `id`             | Unique checklist item identifier          |
+| `label`          | Text displayed to the user                |
+| `required`       | Indicates whether the item is mandatory   |
+| `alreadychecked` | Indicates whether the item is pre-checked |
+
+---
+
+## JSON-Driven Checklist Population
+
+* Checklist data is created from **customer-provided Excel files**
+* Excel data is converted to JSON following the `ChecklistData` structure
+* The floating checklist window consumes this JSON at runtime
+
+---
+
+## Checklist Usage Example
+
+```csharp
+List<ChecklistData> checklist = new List<ChecklistData>()
+{
+    new ChecklistData
+    {
+        id = "C1",
+        label = "Check Battery Status",
+        required = true,
+        alreadychecked = false
+    },
+    new ChecklistData
+    {
+        id = "C2",
+        label = "Clean Camera Lens",
+        required = false,
+        alreadychecked = true
+    }
+};
+```
+
+### Displaying the Floating Checklist Window
+
+```csharp
+ChecklistController.Instance.Show(
+    "Preflight Checklist",
+    checklist,
+    OnChecklistSubmitted,
+    OnChecklistClosed
+);
+```
+
+---
+
+## Checklist Validation Logic
+
+* Validation occurs when the user clicks **Submit / Next**
+* All items marked as `required = true` must be checked
+* If validation fails:
+
+  * A popup message is displayed
+  * The workflow does not proceed
+* If validation succeeds:
+
+  * `OnChecklistSubmitted` callback is triggered
+  * Application proceeds to the next step
+
+---
+
+## Popup Integration
+
+The floating checklist window integrates with the reusable **Popup system** to display validation and confirmation messages.
+
+### Example: Validation Popup
+
+```csharp
+PopUpHandler.Instance.ShowPopup(
+    title,
+    message,
+    ProceedToNextStep,
+    OnCloseButtonClicked,
+    true
+);
+```
+
+---
+
+## State Management
+
+* Checklist state (checked / unchecked items) is preserved:
+
+  * When minimizing the floating window
+  * When maximizing the floating window
+* No data loss occurs during UI transitions
+
+---
+
+## Reusability & Extensibility
+
+* Floating checklist window is reusable across multiple scenarios
+* JSON-driven approach allows content updates without UI changes
+* Supports future enhancements such as:
+
+  * Sectioned checklists
+  * Conditional checklist items
+  * Read-only checklist modes
+
+---

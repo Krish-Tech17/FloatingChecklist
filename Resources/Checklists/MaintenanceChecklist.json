@@ -1,0 +1,78 @@
+{
+  "title": "Preflight Checklist",
+  "showCloseButton": true,
+  "checklist": [
+    {
+      "id": "C1",
+      "label": "Check Battery Status",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C2",
+      "label": "Clean Camera Lens",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C3",
+      "label": "Check Engine Status",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C4",
+      "label": "Clean Engine Oil and remove all the dust. Replace the oil if required. If oil replaced, make sure to log the same!",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C5",
+      "label": "Check hood locking",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C6",
+      "label": "Clean hood",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C7",
+      "label": "Check for any fine dust.",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C8",
+      "label": "Remove all debris",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C9",
+      "label": "Clean the bearings",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C10",
+      "label": "Check the gauge indicator",
+      "required": false,
+      "alreadychecked": true
+    },
+    {
+      "id": "C11",
+      "label": "Spin the motor and check for vibration",
+      "required": true,
+      "alreadychecked": false
+    },
+    {
+      "id": "C12",
+      "label": "Clean motor",
+      "required": false,
+      "alreadychecked": true
+    }
+  ]
+}
