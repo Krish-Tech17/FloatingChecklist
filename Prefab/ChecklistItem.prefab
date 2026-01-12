@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6868669236068317585}
-  - component: {fileID: 3723980818159867407}
   - component: {fileID: 321865225628208212}
   - component: {fileID: 7568305738364753714}
   - component: {fileID: 2282045144709338217}
+  - component: {fileID: 6231796908908474897}
   m_Layer: 5
   m_Name: ChecklistItem
   m_TagString: Untagged
@@ -40,20 +40,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &3723980818159867407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2445445958435248757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 511a71049be80c541bdf3f9a5024d738, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggle: {fileID: 6127957931310932868}
-  label: {fileID: 5087904354278733205}
 --- !u!114 &321865225628208212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,7 +78,7 @@ MonoBehaviour:
     m_Top: 20
     m_Bottom: 20
   m_ChildAlignment: 0
-  m_Spacing: 20
+  m_Spacing: 10
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -114,6 +100,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &6231796908908474897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445445958435248757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee754d620f8801b4fb3e91a4d38ba3ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggle: {fileID: 6127957931310932868}
+  label: {fileID: 5087904354278733205}
 --- !u!1 &2511587982407923621
 GameObject:
   m_ObjectHideFlags: 0

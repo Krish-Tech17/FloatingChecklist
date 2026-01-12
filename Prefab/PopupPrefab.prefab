@@ -2052,7 +2052,7 @@ GameObject:
   - component: {fileID: 9158740198242002146}
   - component: {fileID: 1036283149590793694}
   - component: {fileID: 1598237090755926841}
-  - component: {fileID: 3417535401763972239}
+  - component: {fileID: 2617897464329381154}
   m_Layer: 5
   m_Name: PopupPrefab
   m_TagString: Untagged
@@ -2144,7 +2144,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3417535401763972239
+--- !u!114 &2617897464329381154
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2153,7 +2153,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8021628613912179509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 090ca1d0c12aaeb4f8024799eda9f30b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c8afd990c6a04544adcded174399a8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   popupPanel: {fileID: 1103106223834038926}

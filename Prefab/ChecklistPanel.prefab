@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 2713225213276525995}
   - component: {fileID: 8013240707321049782}
   - component: {fileID: 4347400667658395059}
-  - component: {fileID: 8511194250520584128}
+  - component: {fileID: 6121849720600188885}
   m_Layer: 5
   m_Name: ChecklistPanel
   m_TagString: Untagged
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8511194250520584128
+--- !u!114 &6121849720600188885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -391,17 +391,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1703309231191084804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a09bd95e5f6ff54a9e25e79855fcebb, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d79a82a243cc2c428686b2ae5b7aa42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checklistPanel: {fileID: 1703309231191084804}
+  checklistPanel: {fileID: 8323584360883825318}
   titleText: {fileID: 4571888327059368314}
-  contentParent: {fileID: 3436340316596970697}
-  submitButton: {fileID: 4272500137885820265}
-  closeButton: {fileID: 3765959790903990401}
-  scrollRect: {fileID: 7090721566336494256}
-  checklistItemPrefab: {fileID: 3723980818159867407, guid: e9d12694325b876488633d46c33249b3, type: 3}
+  contentParent: {fileID: 0}
+  submitButton: {fileID: 0}
+  closeButton: {fileID: 0}
+  scrollRect: {fileID: 0}
+  checklistItemPrefab: {fileID: 0}
   itemPool: {fileID: 0}
+  floatingWindowController: {fileID: 0}
 --- !u!1 &4071697382233493872
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ public class ChecklistController : MonoBehaviour
     [SerializeField]private Button submitButton;
     [SerializeField]private Button closeButton;
     [SerializeField] private ScrollRect scrollRect;
-
+    
     private string requiredWarningMessage;
 
 
@@ -48,38 +48,6 @@ public class ChecklistController : MonoBehaviour
         closeButton.onClick.AddListener(OnClose);
     }
 
-    /*public void Show(string title, List<ChecklistData> checklistData,
-                     Action<List<ChecklistData>> submitCallback,
-                     Action closeCallback = null) // add another param - 
-    {
-        checklistPanel.SetActive(true);
-        titleText.text = title;
-
-        onSubmitCallback = submitCallback;
-        onCloseCallback = closeCallback;
-
-        ClearPreviousItems();
-
-        foreach (var data in checklistData)
-        {
-            var itemUI = Instantiate(checklistItemPrefab, contentParent,false);
-
-             itemUI.transform.localScale = Vector3.one;
-
-            itemUI.SetLabel(data.label);
-            itemUI.toggle.isOn = data.alreadychecked;
-            itemUI.SetRequired(data.required);
-            itemUI.BindData(data);
-
-            spawnedItems.Add(itemUI);
-        }
-
-    
-        // Force Layout rebuild to resize content dynamically
-        LayoutRebuilder.ForceRebuildLayoutImmediate(contentParent.GetComponent<RectTransform>());
-        
-    }*/
-
     public void Show(ChecklistRoot checklistRoot, Action<List<ChecklistData>> submitCallback, Action closeCallback = null, string requiredWarningMessage = "Please complete all required fields.")
     {
         checklistPanel.SetActive(true);
@@ -92,6 +60,7 @@ public class ChecklistController : MonoBehaviour
 
         itemPool.ReturnAllObjects();
         spawnedItems.Clear();
+        floatingWindowController.isMaximized = false;
 
         //Checklist items come from ChecklistRoot
         foreach (var data in checklistRoot.checklist)
@@ -156,7 +125,6 @@ public class ChecklistController : MonoBehaviour
         onSubmitCallback?.Invoke(updatedData);
         Hide();
     }
-
     
     private void OnClose()
     {
@@ -171,22 +139,4 @@ public class ChecklistController : MonoBehaviour
         onSubmitCallback = null;
         onCloseCallback = null;
     }
-
-    // private void ProceedToNextStep()
-    // {
-    //     popupPanel.SetActive(false);
-    //     checklistPanel.SetActive(true);
-    // }
-
-    // private void OnCloseButtonClicked()
-    // {
-    //     onCloseCallback?.Invoke();
-    //     HidePopup();   
-    // }
-
-    // private void HidePopup()
-    // {
-    //     popupPanel.SetActive(false);
-    //     checklistPanel.SetActive(true);
-    // }
 }

@@ -1,17 +1,21 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ChecklistJSONLoader
+// Working scipt for floating checklist - JSON loading from Resources folder
+
+public class ChecklistJSONLoader : MonoBehaviour
 {
-    public static ChecklistRoot LoadChecklist(string jsonFileName)
+    public ChecklistRoot LoadChecklist(string checklistId)
     {
-        TextAsset json = Resources.Load<TextAsset>($"Checklists/{jsonFileName}");
+        TextAsset json = Resources.Load<TextAsset>($"Checklists/{checklistId}");
 
         if (json == null)
         {
-            Debug.LogError($"Checklist JSON not found: {jsonFileName}");
+            Debug.LogError($"Checklist JSON not found: {checklistId}");
             return null;
         }
 
         return JsonUtility.FromJson<ChecklistRoot>(json.text);
     }
 }
+
+

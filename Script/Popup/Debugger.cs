@@ -55,13 +55,13 @@ public class Debugger : MonoBehaviour
         //);
 
         //var checklist = ChecklistJSONLoader.LoadChecklist("MaintenanceChecklist");
-        var checklist = ChecklistJSONLoader.LoadChecklist("InspectionChecklist");
+        //var checklist = ChecklistJSONLoader.LoadChecklist("InspectionChecklist");
 
 
-        ChecklistController.Instance.Show(
-            checklist,
-            OnChecklistSubmitted
-        );
+        //ChecklistController.Instance.Show(
+        //    checklist,
+        //    OnChecklistSubmitted
+        //);
 
 
     }
