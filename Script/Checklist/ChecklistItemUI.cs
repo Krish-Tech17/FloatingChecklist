@@ -1,15 +1,20 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ChecklistItemUI : MonoBehaviour
 {
-
     public Toggle toggle;
     public TextMeshProUGUI label;
-    [SerializeField] private Button _noteButton;
-    [SerializeField] private GameObject _noteInputArea;
-    [SerializeField] private TMP_InputField _noteInputField;
+
+    [SerializeField]
+    private Button _noteButton;
+
+    [SerializeField]
+    private GameObject _noteInputArea;
+
+    [SerializeField]
+    private TMP_InputField _noteInputField;
     private ChecklistData boundData;
 
     public void SetLabel(string text)
@@ -45,8 +50,8 @@ public class ChecklistItemUI : MonoBehaviour
         boundData = data;
         toggle.onValueChanged.RemoveAllListeners();
         toggle.onValueChanged.AddListener(OnToggleChanged);
-       
-        noteInputArea.SetActive(false);
+
+        _noteInputArea.SetActive(false);
         _noteInputField.text = data.note ?? string.Empty;
 
         _noteButton.onClick.RemoveAllListeners();
@@ -68,7 +73,8 @@ public class ChecklistItemUI : MonoBehaviour
 
     private void OnNoteChanged(string value)
     {
-        if (boundData == null) return;
+        if (boundData == null)
+            return;
         boundData.note = value;
     }
 
@@ -77,10 +83,4 @@ public class ChecklistItemUI : MonoBehaviour
         _noteButton.onClick.RemoveAllListeners();
         _noteInputField.onValueChanged.RemoveAllListeners();
     }
-
 }
-
-
-
-
-
