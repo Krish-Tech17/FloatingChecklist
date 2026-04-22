@@ -78,7 +78,7 @@ public class ChecklistItemUI : MonoBehaviour
         boundData.note = value;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         _noteButton.onClick.RemoveAllListeners();
         _noteInputField.onValueChanged.RemoveAllListeners();
