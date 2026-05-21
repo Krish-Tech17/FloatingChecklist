@@ -144,6 +144,11 @@ public class PopUpHandler : MonoBehaviour
         HidePopup();
     }
 
+    public void ClosePopup()
+    {
+        HidePopup();
+    }
+
     private void HidePopup()
     {
         popupPanel.SetActive(false);
