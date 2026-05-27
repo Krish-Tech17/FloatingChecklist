@@ -149,7 +149,7 @@ public class PopUpHandler : MonoBehaviour
         HidePopup();
     }
 
-    private void HidePopup()
+    public void HidePopup()
     {
         popupPanel.SetActive(false);
         textOverlayButton.SetActive(false);
