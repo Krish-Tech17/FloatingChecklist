@@ -10,7 +10,7 @@ public class PopUpHandler : MonoBehaviour
     [Header("Main Popup Panel")]
     [SerializeField] private GameObject popupPanel;
     [SerializeField] private TextMeshProUGUI titleText;
-    [SerializeField] private TextMeshProUGUI messageText;
+    public TextMeshProUGUI messageText;
     [SerializeField] private Button okButton;
     [SerializeField] private Button closeButton;
     [SerializeField] private Button yesButton;
