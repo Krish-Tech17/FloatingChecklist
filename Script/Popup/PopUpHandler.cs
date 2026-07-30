@@ -1,34 +1,56 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System;
 
 public class PopUpHandler : MonoBehaviour
 {
     public static PopUpHandler Instance;
 
     [Header("Main Popup Panel")]
-    [SerializeField] private GameObject popupPanel;
-    [SerializeField] private TextMeshProUGUI titleText;
+    [SerializeField]
+    private GameObject popupPanel;
+
+    [SerializeField]
+    private TextMeshProUGUI titleText;
     public TextMeshProUGUI messageText;
-    [SerializeField] private Button okButton;
-    [SerializeField] private Button closeButton;
-    [SerializeField] private Button yesButton;
-    [SerializeField] private Button noButton;
-    [SerializeField] private TextMeshProUGUI okButtonText;
-    [SerializeField] private TextMeshProUGUI closeButtonText;
+
+    [SerializeField]
+    private Button okButton;
+
+    [SerializeField]
+    private Button closeButton;
+
+    [SerializeField]
+    private Button yesButton;
+
+    [SerializeField]
+    private Button noButton;
+
+    [SerializeField]
+    private TextMeshProUGUI okButtonText;
+
+    [SerializeField]
+    private TextMeshProUGUI closeButtonText;
 
     [Header("Click Overlay for Truncated Text")]
-    [SerializeField] private GameObject textOverlayButton;
+    [SerializeField]
+    private GameObject textOverlayButton;
 
     [Header("Full Message Panel")]
-    [SerializeField] private GameObject fullMessagePanel;
-    [SerializeField] private TextMeshProUGUI fullMessageText;
-    [SerializeField] private Button fullMessageCloseButton;
+    [SerializeField]
+    private GameObject fullMessagePanel;
 
-     [SerializeField]private int maxCharacters = 120; // Adjust this however you want
+    [SerializeField]
+    private TextMeshProUGUI fullMessageText;
 
-     private string originalFullMessage = "";
+    [SerializeField]
+    private Button fullMessageCloseButton;
+
+    [SerializeField]
+    private int maxCharacters = 120; // Adjust this however you want
+
+    private string originalFullMessage = "";
 
     private Action onOkCallback;
     private Action onCloseCallback;
@@ -36,12 +58,15 @@ public class PopUpHandler : MonoBehaviour
     private Action onNoCallback;
     private string currentMessage = "";
 
-
-    
     private void Awake()
     {
-        if (Instance == null) Instance = this;
-        else { Destroy(gameObject); return; }
+        if (Instance == null)
+            Instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
 
         popupPanel.SetActive(false);
         fullMessagePanel.SetActive(false);
@@ -57,7 +82,23 @@ public class PopUpHandler : MonoBehaviour
         overlayBtn.onClick.AddListener(ShowFullMessage);
     }
 
-    public void ShowPopup(string title, string msg, Action ok = null, Action close = null, bool isOkButtonRequired = true)
+    public void HidePopupTemporarily()
+    {
+        popupPanel.SetActive(false);
+    }
+
+    public void ShowPopupAgain()
+    {
+        popupPanel.SetActive(true);
+    }
+
+    public void ShowPopup(
+        string title,
+        string msg,
+        Action ok = null,
+        Action close = null,
+        bool isOkButtonRequired = true
+    )
     {
         popupPanel.SetActive(true);
 
@@ -90,14 +131,19 @@ public class PopUpHandler : MonoBehaviour
         Canvas.ForceUpdateCanvases();
     }
 
-    public void ShowYesNoPopup(string type, string message, Action yesCallback, Action noCallback, Action closeCallback)
+    public void ShowYesNoPopup(
+        string type,
+        string message,
+        Action yesCallback,
+        Action noCallback,
+        Action closeCallback
+    )
     {
         popupPanel.SetActive(true);
 
         titleText.text = type ?? "";
         originalFullMessage = message ?? "";
 
-        
         if (originalFullMessage.Length > maxCharacters)
         {
             messageText.text = originalFullMessage.Substring(0, maxCharacters) + "...";
@@ -160,7 +206,6 @@ public class PopUpHandler : MonoBehaviour
 
     private void ShowFullMessage()
     {
-
         fullMessageText.text = originalFullMessage;
 
         popupPanel.SetActive(false);
@@ -174,7 +219,6 @@ public class PopUpHandler : MonoBehaviour
         fullMessagePanel.SetActive(false);
         popupPanel.SetActive(true);
     }
-
 
     private void RefreshTruncationOverlay()
     {
@@ -200,7 +244,4 @@ public class PopUpHandler : MonoBehaviour
 
         return preferredWidth > rectWidth + 0.1f;
     }
-
 }
-
-
