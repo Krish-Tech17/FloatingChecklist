@@ -10,7 +10,7 @@ public class PopUpHandler : MonoBehaviour
     [Header("Main Popup Panel")]
     [SerializeField] private GameObject popupPanel;
     [SerializeField] private TextMeshProUGUI titleText;
-    [SerializeField] private TextMeshProUGUI messageText;
+    public TextMeshProUGUI messageText;
     [SerializeField] private Button okButton;
     [SerializeField] private Button closeButton;
     [SerializeField] private Button yesButton;
@@ -26,9 +26,9 @@ public class PopUpHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI fullMessageText;
     [SerializeField] private Button fullMessageCloseButton;
 
-    [SerializeField] private int maxCharacters = 120; // Adjust this however you want
+     [SerializeField]private int maxCharacters = 120; // Adjust this however you want
 
-    private string originalFullMessage = "";
+     private string originalFullMessage = "";
 
     private Action onOkCallback;
     private Action onCloseCallback;
@@ -37,7 +37,7 @@ public class PopUpHandler : MonoBehaviour
     private string currentMessage = "";
 
 
-
+    
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -60,7 +60,6 @@ public class PopUpHandler : MonoBehaviour
     public void ShowPopup(string title, string msg, Action ok = null, Action close = null, bool isOkButtonRequired = true)
     {
         popupPanel.SetActive(true);
-        ResetButtons();
 
         titleText.text = title ?? "";
         originalFullMessage = msg ?? "";
@@ -94,12 +93,11 @@ public class PopUpHandler : MonoBehaviour
     public void ShowYesNoPopup(string type, string message, Action yesCallback, Action noCallback, Action closeCallback)
     {
         popupPanel.SetActive(true);
-        ResetButtons();
 
         titleText.text = type ?? "";
         originalFullMessage = message ?? "";
 
-
+        
         if (originalFullMessage.Length > maxCharacters)
         {
             messageText.text = originalFullMessage.Substring(0, maxCharacters) + "...";
@@ -120,14 +118,6 @@ public class PopUpHandler : MonoBehaviour
         onCloseCallback = closeCallback;
 
         Canvas.ForceUpdateCanvases();
-    }
-
-    void ResetButtons()
-    {
-        okButton.gameObject.SetActive(false);
-        closeButton.gameObject.SetActive(false);
-        yesButton.gameObject.SetActive(false);
-        noButton.gameObject.SetActive(false);
     }
 
     private void OnOkClicked()
@@ -151,6 +141,11 @@ public class PopUpHandler : MonoBehaviour
     private void OnNoClicked()
     {
         onNoCallback?.Invoke();
+        HidePopup();
+    }
+
+    public void ClosePopup()
+    {
         HidePopup();
     }
 
@@ -207,3 +202,5 @@ public class PopUpHandler : MonoBehaviour
     }
 
 }
+
+

@@ -19,5 +19,7 @@ public class ChecklistData
     public bool required;
     public bool alreadychecked;
     public bool currentstatus;
+    public string note;
+    public List<string> noteImagePaths;
 }
 
