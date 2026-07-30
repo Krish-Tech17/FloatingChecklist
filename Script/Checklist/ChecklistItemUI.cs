@@ -7,6 +7,8 @@ public class ChecklistItemUI : MonoBehaviour
     public Toggle toggle;
     public TextMeshProUGUI label;
 
+    public TextMeshProUGUI stepnumber;
+
     [SerializeField]
     private Button _noteButton;
 
@@ -16,12 +18,17 @@ public class ChecklistItemUI : MonoBehaviour
     [SerializeField]
     private TMP_InputField _noteInputField;
     private ChecklistData boundData;
+    private ChecklistItemNoteController _noteController;
 
     public void SetLabel(string text)
     {
         label.text = text;
     }
 
+    public void SetId(string id)
+    {
+        stepnumber.text = id;
+    }
     public void SetRequired(bool isRequired)
     {
         if (isRequired)
@@ -49,6 +56,7 @@ public class ChecklistItemUI : MonoBehaviour
     {
         boundData = data;
         toggle.onValueChanged.RemoveAllListeners();
+        toggle.SetIsOnWithoutNotify(data.currentstatus);
         toggle.onValueChanged.AddListener(OnToggleChanged);
 
         _noteInputArea.SetActive(false);
@@ -66,9 +74,19 @@ public class ChecklistItemUI : MonoBehaviour
         boundData.currentstatus = value;
     }
 
+    // private void OnNoteButtonClicked()
+    // {
+    //     _noteInputArea.SetActive(!_noteInputArea.activeSelf);
+    // }
+
+    private void Awake()
+    {
+        _noteController = GetComponent<ChecklistItemNoteController>();
+    }
+
     private void OnNoteButtonClicked()
     {
-        _noteInputArea.SetActive(!_noteInputArea.activeSelf);
+        _noteController?.HandleNoteButtonClicked();
     }
 
     private void OnNoteChanged(string value)
@@ -76,6 +94,8 @@ public class ChecklistItemUI : MonoBehaviour
         if (boundData == null)
             return;
         boundData.note = value;
+
+        _noteController?.RefreshButtonLabel();
     }
 
     private void OnDestroy()
