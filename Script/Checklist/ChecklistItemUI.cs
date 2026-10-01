@@ -55,7 +55,7 @@ public class ChecklistItemUI : MonoBehaviour
     public void BindData(ChecklistData data)
     {
         boundData = data;
-        toggle.onValueChanged.RemoveAllListeners();
+        toggle.onValueChanged.RemoveListener(OnToggleChanged);
         toggle.SetIsOnWithoutNotify(data.currentstatus);
         toggle.onValueChanged.AddListener(OnToggleChanged);
 

@@ -15,6 +15,7 @@ public class ChecklistRoot
 public class ChecklistData
 {
     public string id;
+    public string sourceId;
     public string label;
     public bool required;
     public bool alreadychecked;

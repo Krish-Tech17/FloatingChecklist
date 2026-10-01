@@ -67,6 +67,7 @@ public class ChecklistController : MonoBehaviour
         {
             var itemUI = itemPool.GetObject();
 
+            itemUI.SetId(data.id);
             itemUI.SetLabel(data.label);
             itemUI.toggle.isOn = data.alreadychecked;
             itemUI.SetRequired(data.required);
